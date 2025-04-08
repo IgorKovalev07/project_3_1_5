@@ -32,8 +32,8 @@ public class UserServiceImpl implements UserService {
         userDao.deleteUser(id);
     }
 
-    public void updateUser(Long id, User user) {
-        userDao.updateUser(id, user);
+    public void updateUser(Long id, String firstName, String lastName, String email) {
+        userDao.updateUser(id, firstName, lastName, email);
     }
 
 

@@ -58,18 +58,7 @@ public class UserController {
             @RequestParam("lastName") String lastName,
             @RequestParam("email") String email
     ) {
-
-        User user = userService.showUser(id);
-
-        if (user != null) {
-
-            user.setFirstName(firstName);
-            user.setLastName(lastName);
-            user.setEmail(email);
-
-            userService.updateUser(id, user);
-        }
-
+        userService.updateUser(id, firstName, lastName, email);
         return "redirect:/users";
     }
 
