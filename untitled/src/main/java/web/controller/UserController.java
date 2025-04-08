@@ -6,6 +6,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import web.model.User;
 import web.service.UserService;
+import web.service.UserServiceImpl;
 
 import java.util.List;
 
@@ -32,7 +33,7 @@ public class UserController {
         return "user-form";
     }
 
-    @PostMapping()
+    @PostMapping("/create")
     public String saveUser(
             @RequestParam("firstName") String firstName,
             @RequestParam("lastName") String lastName,
@@ -50,9 +51,9 @@ public class UserController {
         return "user-form";
     }
 
-    @PostMapping("/{id}")
+    @PostMapping("/update")
     public String updateUser(
-            @PathVariable("id") Long id,
+            @RequestParam("id") Long id,
             @RequestParam("firstName") String firstName,
             @RequestParam("lastName") String lastName,
             @RequestParam("email") String email
