@@ -23,7 +23,7 @@
     <input type="password" th:field="*{password}" required/><br/>
 
     <label>Роли:</label>
-    <select name="rolesNames" multiple size="2">
+    <select name="roleNames" multiple size="2">
         <option th:each="role : ${allRoles}"
                 th:value="${role.roleName}"
                 th:text="${role.roleName}">
@@ -35,7 +35,7 @@
 
 <!-- Форма редактирования существующего пользователя -->
 <form th:if="${user.id != null}" th:action="@{/admin/update}" th:object="${user}" method="post">
-    <!-- Обязательно передаём id -->
+
     <input type="hidden" th:field="*{id}"/>
 
     <label>Имя:</label>
